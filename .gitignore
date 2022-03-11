@@ -51,5 +51,8 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
+# README.me
+README.me
+
 # MAC Files
 *.DS_Store
