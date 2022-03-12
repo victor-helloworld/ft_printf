@@ -6,11 +6,11 @@
 /*   By: victor <vcollazo@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 04:37:45 by victor            #+#    #+#             */
-/*   Updated: 2022/03/11 11:35:34 by vcollazo         ###   ########.fr       */
+/*   Updated: 2022/03/12 12:33:26 by vcollazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../inc/ft_printf.h"
 
 int	ft_putnbr(int nb)
 {

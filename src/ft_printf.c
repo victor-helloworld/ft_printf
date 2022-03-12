@@ -6,11 +6,11 @@
 /*   By: vcollazo <vcollazo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 14:57:16 by vcollazo          #+#    #+#             */
-/*   Updated: 2022/03/09 05:51:44 by victor           ###   ########.fr       */
+/*   Updated: 2022/03/12 19:31:00 by vcollazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../inc/ft_printf.h"
 
 int	select_conversion(va_list args, char specifier)
 {
@@ -23,9 +23,7 @@ int	select_conversion(va_list args, char specifier)
 		ft_putstr("0x");
 		return (ft_putnbr_base(va_arg(args, unsigned long int),"0123456789abcdef") + 2);
 	}
-	else if (specifier == 'd')
-		return (ft_putnbr(va_arg(args, int)));
-	else if (specifier == 'i')
+	else if (specifier == 'd' || specifier == 'i')
 		return (ft_putnbr(va_arg(args, int)));
 	else if (specifier == 'u')
 		return (ft_putnbr_base(va_arg(args, unsigned int), "0123456789"));
@@ -41,25 +39,23 @@ int	select_conversion(va_list args, char specifier)
 int	ft_printf(const char *str, ...)
 {
 	int		i;
-	int		char_cnt;
+	int		char_count;
 	va_list	args;
 
-	i = 0;
-	char_cnt = 0;
+		i = -1;
+	char_count = 0;
 	va_start(args, str);
-	while (str[i])
+	while (str[++i])
 	{
 		if (str[i] == '%')
 		{
-			char_cnt += select_conversion(args, str[i + 1]);
-			i++;
+			char_count += select_conversion(args, str[++i]);
 		}
 		else
 		{
 			ft_putchar(str[i]);
-			char_cnt++;
+			char_count++;
 		}
-		i++;
 	}
-	return (char_cnt);
+	return (char_count);
 }
