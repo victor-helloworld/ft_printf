@@ -52,7 +52,7 @@ Mkfile.old
 dkms.conf
 
 # README.me
-README.me
+README.md
 
 # MAC Files
 *.DS_Store
