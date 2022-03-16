@@ -18,7 +18,7 @@
 
 SRC_DIR = src
 INC_DIR = inc
-OBJ_DIR = obj
+OBJ_DIR := obj
 BIN_DIR = bin
 
 SRCS = ft_printf.c\
@@ -39,13 +39,18 @@ RM = rm -f
 #		IMPLICIT RULES
 ################################################################################
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c 
 		@$(CC) $(CFLAGS) -c $< -o $@
 
 all:	$(NAME)	
 
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
+
+$(OBJS): | $(OBJ_DIR)
+
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
 
 #clean implicit rules
 #	clean:		remove object files (.o)
