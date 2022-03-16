@@ -22,8 +22,8 @@ OBJ_DIR = obj
 BIN_DIR = bin
 
 SRCS = ft_printf.c\
-	   str_utils.c\
-	   nbr_utils.c
+	   ft_printf_str.c\
+	   ft_printf_nbr.c\
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 

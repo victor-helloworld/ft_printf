@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_utils.c                                        :+:      :+:    :+:   */
+/*   printf_str.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: victor <vcollazo@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 04:37:45 by victor            #+#    #+#             */
-/*   Updated: 2022/03/12 12:33:45 by vcollazo         ###   ########.fr       */
+/*   Updated: 2022/03/16 17:52:06 by vcollazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
-	write(1, &c, sizeof(char));
+	return (write(1, &c, sizeof(char)));
 }
 
 int	ft_putstr(char *s)
@@ -25,7 +25,7 @@ int	ft_putstr(char *s)
 	if (!s)
 	{
 		ft_putstr("(null)");
-		return (6);
+		return (4);
 	}
 	while (s[i])
 	{
