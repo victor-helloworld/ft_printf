@@ -33,24 +33,27 @@ CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra  
 
-RM = rm -f
+RM = rm -rf
 
 ################################################################################
 #		IMPLICIT RULES
 ################################################################################
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c 
-		@$(CC) $(CFLAGS) -c $< -o $@
+$(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c 
+	@$(CC) $(CFLAGS) -c $< -o $@
 
-all:	$(NAME)	
+all:	$(NAME)
 
-$(NAME): $(OBJS)
+main:	$(NAME)
+	@$(CC) $(CFLAGS) $(NAME) $(addprefix $(SRC_DIR)/, main.c)
+
+$(NAME):	$(OBJS)
 	@ar rcs $(NAME) $(OBJS)
 
-$(OBJS): | $(OBJ_DIR)
+$(OBJS):	| $(OBJ_DIR)
 
 $(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
+	@mkdir -p $(OBJ_DIR)
 
 #clean implicit rules
 #	clean:		remove object files (.o)
@@ -60,8 +63,8 @@ $(OBJ_DIR):
 clean:	
 	@$(RM) $(OBJS)
 
-fclean: clean
-	@$(RM) $(NAME) $(OBJS)
+fclean:	clean
+	@$(RM) $(NAME) $(OBJ_DIR)
 
 re:	fclean all
 
