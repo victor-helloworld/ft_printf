@@ -6,31 +6,30 @@
 /*   By: victor <vcollazo@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 04:37:45 by victor            #+#    #+#             */
-/*   Updated: 2022/03/16 18:59:34 by vcollazo         ###   ########.fr       */
+/*   Updated: 2022/03/16 19:24:36 by vcollazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
 
-int	ft_putnbr(int nb)
+int	ft_putnbr(int nbr)
 {
 	int	char_count;
 
 	char_count = 0;
-	if (nb == -2147483648)
+	if (nbr == -2147483648)
 	{
-		write(1, "-2147483648", 11);
-		return (11);
+		return (write(1, "-2147483648", 11));
 	}
-	if (nb < 0)
+	if (nbr < 0)
 	{
-		nb = nb * -1;
+		nbr = nbr * -1;
 		ft_putchar('-');
 		char_count++;
 	}
-	if (nb > 9)
-		char_count += ft_putnbr(nb / 10);
-	ft_putchar(nb % 10 + '0');
+	if (nbr > 9)
+		char_count += ft_putnbr(nbr / 10);
+	ft_putchar(nbr % 10 + '0');
 	char_count++;
 	return (char_count);
 }
@@ -53,7 +52,7 @@ int	ft_putnbrbase(unsigned long long nb, char *base)
 	return (char_count);
 }
 
-int	ft_putnbr_base(unsigned int nbr, char *base)
+int	ft_putnbr_base(unsigned long int nbr, char *base)
 {
 	int	i;
 	int	j;

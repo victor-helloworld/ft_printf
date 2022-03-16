@@ -6,7 +6,7 @@
 /*   By: victor <vcollazo@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 04:37:45 by victor            #+#    #+#             */
-/*   Updated: 2022/03/16 17:52:06 by vcollazo         ###   ########.fr       */
+/*   Updated: 2022/03/16 19:40:49 by vcollazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_putstr(char *s)
 	if (!s)
 	{
 		ft_putstr("(null)");
-		return (4);
+		return (6);
 	}
 	while (s[i])
 	{

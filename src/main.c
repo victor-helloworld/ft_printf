@@ -6,7 +6,7 @@
 /*   By: victor <vcollazo@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 06:26:29 by victor            #+#    #+#             */
-/*   Updated: 2022/03/16 18:09:08 by vcollazo         ###   ########.fr       */
+/*   Updated: 2022/03/16 19:36:01 by vcollazo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,10 @@ int 	main(void)
 	ft_printf("ft_printf_ %%p[nbr]:\n", &nbr);
 	ft_printf("ft_printf_ %%p((void*)-1): %p\n", (void *)-1);
 	printf("printf____ str_null: %s\n", str_null);
-
+	nbr = ft_printf("ft_printf_ NULL %s NULL\n", NULL);
+	printf("nbr %i\n", nbr);
+	nbr = printf("printf____ NULL %s NULL\n", NULL);
+	printf("nbr %i\n", nbr);
 
 	ft_printf("ft_printf_ %% works fine\n");
 	ft_printf("Multiple conversion, str1: %s, str2: %s\n", str1, str2);
