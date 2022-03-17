@@ -54,5 +54,8 @@ dkms.conf
 # README.me
 README.md
 
+# SWAP files
+*.swp
+
 # MAC Files
 *.DS_Store
