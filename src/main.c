@@ -6,7 +6,7 @@
 /*   By: victor <vcollazo@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 06:26:29 by victor            #+#    #+#             */
-/*   Updated: 2022/03/16 19:36:01 by vcollazo         ###   ########.fr       */
+/*   Updated: 2022/03/17 01:36:49 by victor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int 	main(void)
 	char	*str1 = "Hello world";
 	char	*str2 = "Hello 42";
 	char	*str_null = 0;
-	int		nbr;
+	int	nbr;
 
 	nbr = 10;	
 

@@ -18,12 +18,12 @@
 
 SRC_DIR = src
 INC_DIR = inc
-OBJ_DIR := obj
+OBJ_DIR = obj
 BIN_DIR = bin
 
 SRCS = ft_printf.c\
-	   ft_printf_str.c\
-	   ft_printf_nbr.c\
+       ft_printf_str.c\
+       ft_printf_nbr.c\
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 
@@ -68,5 +68,5 @@ fclean:	clean
 
 re:	fclean all
 
-# .PHONY avoid relinking
+# .PHONY prerequisitest always run independently if name exists or modification time
 .PHONY: all bonus clean fclean r 
