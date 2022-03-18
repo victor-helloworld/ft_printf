@@ -39,7 +39,7 @@ RM = rm -rf
 
 all:	$(NAME)
 
-$(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c 
+$(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c | $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 main:	$(NAME)
@@ -48,15 +48,13 @@ main:	$(NAME)
 $(NAME):	$(OBJS)
 	@ar rcs $(NAME) $(OBJS)
 
-$(OBJS):	| $(OBJ_DIR)
-
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
 
 #clean implicit rules
 #	clean:		remove object files (.o)
 #	fclean:		remove object files and the binary (.o, .a)
-#	re:			remove object files and the binary (.a, .a). Remake the binary 
+#	re:		remove object files and the binary (.a, .a). Remake the binary 
 
 clean:	
 	@$(RM) $(OBJS)
